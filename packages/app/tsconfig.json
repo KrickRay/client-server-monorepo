@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es2018",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "outDir": "lib",
+        "declaration": true,
+        "skipLibCheck": true
+    },
+    "include": ["src"]
+}
