@@ -1,27 +1,31 @@
 {
-  "name": "base",
-  "version": "0.1.0",
-  "private": true,
-  "license": "UNLICENSED",
-  "scripts": {
-    "start": "concurrently -n \"SER,CLI\" -c \"bgGreen,bgBlue\" \"yarn server\" \"yarn client\"",
-    "bootstrap": "lerna bootstrap",
-    "client": "yarn workspace client run start",
-    "server": "yarn workspace server run watch",
-    "app": "yarn workspace app run watch",
-    "lint": "tslint -c tslint.json 'packages/**/src/**/*.ts*'",
-    "fix": "yarn lint -- --fix"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "devDependencies": {
-    "@types/node": "^12.11.1",
-    "concurrently": "^5.0.0",
-    "lerna": "^3.18.1",
-    "nodemon": "^1.19.4",
-    "ts-node": "^8.4.1",
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.4"
-  }
+    "name": "root",
+    "version": "0.1.0",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "concurrently -n \"SER,CLI\" -c \"bgGreen,bgBlue\" \"yarn server\" \"yarn client\"",
+        "bootstrap": "lerna bootstrap",
+        "client": "yarn workspace client run start",
+        "server": "yarn workspace server run start",
+        "app": "yarn workspace app run watch",
+        "lint": "eslint ./packages/*/src/**/*.{js,jsx,ts,tsx}",
+        "fix": "eslint ./packages/*/src/**/*.{js,jsx,ts,tsx} --fix"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "@types/node": "^13.7.0",
+        "@typescript-eslint/eslint-plugin": "^2.19.0",
+        "@typescript-eslint/parser": "^2.19.0",
+        "concurrently": "^5.1.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-react": "^7.18.3",
+        "lerna": "^3.20.2",
+        "ts-node": "^8.6.2",
+        "ts-node-dev": "^1.0.0-pre.44",
+        "typescript": "^3.7.5"
+    }
 }

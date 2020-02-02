@@ -1,3 +1,4 @@
 {
-    "notify": false
+    "notify": false,
+    "deps": 2
 }

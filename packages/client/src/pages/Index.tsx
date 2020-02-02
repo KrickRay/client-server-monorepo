@@ -1,16 +1,14 @@
 import React from "react";
 
-import { api } from "../api";
 import { useStores } from "../stores";
+import { observer } from "mobx-react";
 
-api.getUsers().then(console.log);
-
-export const Index: React.FC = () => {
-    const {} = useStores();
+export const Index = observer(() => {
+    const { userStore } = useStores();
 
     return (
         <>
-            <h1>Base</h1>
+            <h1>Hello, {userStore.user.name}!</h1>
         </>
     );
-};
+});
